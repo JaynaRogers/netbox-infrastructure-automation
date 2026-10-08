@@ -74,3 +74,20 @@ python -m src.compare_live
 The token only needs read access to DCIM devices. Use a test instance or an explicitly authorized NetBox environment. The sample discovery fixture is compared by device name; mismatched site/role/type naming conventions may appear as proposed updates.
 
 The API adapter requires HTTPS and rejects pagination redirects to other hosts. This example is a read-only reference implementation, not an approved production synchronization tool.
+
+## Controlled synchronization demonstration
+
+`src/controlled_sync.py` demonstrates approval gating, structured audit events, partial-failure handling, and rollback planning using **only in-memory synthetic inventory**. It cannot modify a live NetBox instance.
+
+```bash
+# Default: dry run, no changes
+python -m src.controlled_sync
+
+# Explicitly approve simulated changes
+python -m src.controlled_sync --approve --approval-text "APPROVE DEMO SYNC"
+
+# Write local JSONL audit events (ignored by Git)
+python -m src.controlled_sync --audit-file output/sync-audit.jsonl
+```
+
+The rollback plan reverses completed simulated operations; it is not a production rollback mechanism. A production implementation would require object-ID resolution, NetBox-specific field validation, authorization, concurrency protection, persistent audit storage, and integration testing before enabling writes.
