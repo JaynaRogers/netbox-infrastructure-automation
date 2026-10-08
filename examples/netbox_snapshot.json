@@ -1,0 +1,20 @@
+[
+  {
+    "name": "fw-den-lab-01",
+    "serial": "DEMO-FGT-001",
+    "site": "denver-lab",
+    "role": "firewall",
+    "device_type": "fortigate-vm",
+    "management_ip": "192.0.2.10",
+    "status": "active"
+  },
+  {
+    "name": "fw-den-lab-02",
+    "serial": "DEMO-FGT-002",
+    "site": "denver-lab",
+    "role": "firewall",
+    "device_type": "fortigate-vm",
+    "management_ip": "192.0.2.99",
+    "status": "active"
+  }
+]
