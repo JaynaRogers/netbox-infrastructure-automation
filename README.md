@@ -58,3 +58,19 @@ All committed sample inventory is fictional and uses reserved documentation addr
 ## License
 
 MIT.
+
+## Live NetBox comparison (read-only)
+
+The live comparison command retrieves device inventory from the NetBox REST API, follows pagination, and produces a JSON change plan. It does not write to NetBox.
+
+Set credentials locally (never commit tokens):
+
+```bash
+export NETBOX_URL="https://netbox.example.com"
+export NETBOX_TOKEN="your-token"
+python -m src.compare_live
+```
+
+The token only needs read access to DCIM devices. Use a test instance or an explicitly authorized NetBox environment. The sample discovery fixture is compared by device name; mismatched site/role/type naming conventions may appear as proposed updates.
+
+The API adapter requires HTTPS and rejects pagination redirects to other hosts. This example is a read-only reference implementation, not an approved production synchronization tool.
