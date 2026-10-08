@@ -1,0 +1,34 @@
+[
+  {
+    "name": "fw-den-lab-01",
+    "serial": "DEMO-FGT-001",
+    "site": "denver-lab",
+    "role": "firewall",
+    "device_type": "fortigate-vm",
+    "management_ip": "192.0.2.10"
+  },
+  {
+    "name": "fw-den-lab-02",
+    "serial": "DEMO-FGT-002",
+    "site": "denver-lab",
+    "role": "firewall",
+    "device_type": "fortigate-vm",
+    "management_ip": "192.0.2.11"
+  },
+  {
+    "name": "router-den-lab-01",
+    "serial": "DEMO-RTR-001",
+    "site": "denver-lab",
+    "role": "router",
+    "device_type": "virtual-router",
+    "management_ip": "192.0.2.20"
+  },
+  {
+    "name": "router-nyc-lab-01",
+    "serial": "DEMO-RTR-002",
+    "site": "new-york-lab",
+    "role": "router",
+    "device_type": "virtual-router",
+    "management_ip": "198.51.100.10"
+  }
+]
