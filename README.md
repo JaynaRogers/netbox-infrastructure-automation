@@ -2,6 +2,10 @@
 
 Reference implementation for network discovery, inventory normalization, and safe source-of-truth reconciliation.
 
+## Architecture documentation
+
+See [Architecture and Design Decisions](docs/architecture.md) for the system diagram, component boundaries, failure handling, security model, and engineering tradeoffs.
+
 ## Capabilities
 
 - Discover network devices from synthetic JSON fixtures or a configurable REST endpoint.
